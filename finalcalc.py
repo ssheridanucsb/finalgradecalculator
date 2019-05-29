@@ -45,16 +45,16 @@ def grade_plotter(subgrade_list, grade_breaks):
     plt.xticks(np.arange(101, step=5))
     plt.show()
 
-sections = input("Excluding the final how many graded sections are there: ")
+sections = input("Excluding the final how many graded categories are there: ")
 
 sections = int(sections)
 
 objs = [SubGrade(i, 0, 0) for i in range(sections)]
 
 for i in range(sections):
-    n = input("Enter the name of this  section (midterm/hw/etc): ")
+    n = input("Enter the name of this  category (midterm/hw/etc): ")
     g = input("Enter your average grade out of 100: ")
-    w = input("Enter the weight of this section  between 0 and 1: ")
+    w = input("Enter the weight of this category  between 0 and 1: ")
     objs[i].grade = float(g)
     objs[i].weight = float(w)
     objs[i].name = n
