@@ -19,12 +19,8 @@ class SubGrade:
 
 def grade_plotter(subgrade_list, grade_breaks):
     """takes list of partial grades for a class and plots potential final test scores vs final grade"""
-    pregrade = 0
-    percent_non_final = 0
-
-    for sub in subgrade_list:
-        pregrade += sub.agg()
-        percent_non_final += sub.weight
+    pregrade = sum([x.agg() for x in subgrade_list])
+    percent_non_final= sum([x.weight for x in subgrade_list])
 
     percent_final = 1 - percent_non_final
 
